@@ -21,11 +21,12 @@ module Base64Attachment
         base64_attribute = attribute.to_s + "_base64"
         before_validation method_name.to_sym
         attr_accessor base64_attribute.to_sym
-        
+        puts 'INIT HAS ATTACHED: ' + attribute.to_s
         define_method "#{method_name}" do 
           if self.respond_to?(base64_attribute)
             encoded = self.send(base64_attribute).to_s
-            if (encoded != nil)
+            puts 'has encoded: ' + encoded.to_s
+            if (encoded != nil && encoded.length > 0)
               # decode base64 string
               decoded = Base64.decode64(encoded)
               
