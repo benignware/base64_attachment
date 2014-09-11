@@ -12,7 +12,7 @@ Usage
 ```json
 {
   "post": {
-    image_base64: "" # base64-encoded string
+    "image_base64": "base64-encoded string"
   }
 }
 ```
