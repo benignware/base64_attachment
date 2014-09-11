@@ -1,0 +1,3 @@
+= Base64Attachment
+
+This project rocks and uses MIT-LICENSE.
