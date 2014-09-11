@@ -9,18 +9,20 @@ Simply post your base64-encoded string using the `_base64`-suffix on the attribu
 Usage
 -----
 
+Register your model for the base64-hook
+```ruby
+class Post < ActiveRecord::Base
+  has_attached_base64 :image
+end
+```
+
+Post json
 ```json
 {
   "post": {
     "image_base64": "base64-encoded string"
   }
 }
-```
-
-```ruby
-class Post < ActiveRecord::Base
-  has_attached_base64 :image
-end
 ```
 
 The content-type as well as the original_filename is automatically generated based on magic numbers using the [mime-magic](https://github.com/minad/mimemagic)-gem.
